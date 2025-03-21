@@ -1,0 +1,50 @@
+Speaker A 7200 - 11140: Hello, My name is Rajesh. And I'm here to help you with all of your issues.
+Speaker B 12080 - 18408: Hey Rajesh. We've been using your product for a few weeks now. And today it crashed and we cannot launch it anymore.
+Speaker A 18504 - 20900: Okay, sir. Thank you for letting me know.
+Speaker B 21760 - 24072: And what am I supposed to do now?
+Speaker A 24256 - 26500: What is the priority of the issue?
+Speaker B 27430 - 28990: What do you mean the priority?
+Speaker A 29070 - 41210: It's urgent priority. From 1 to 10. Where 1 means the severity is very low and I can close the ticket now. And 10 means the severity is very high and I cannot close the ticket yet.
+Speaker C 41910 - 44494: It's 2020.
+Speaker A 44582 - 45486: Meaning?
+Speaker B 45678 - 48930: Meaning it's a people are dying priority.
+Speaker A 49510 - 52334: But are they dying instantly or slowly?
+Speaker C 52382 - 53010: Maybe.
+Speaker B 53570 - 56230: Can we finally start talking about my problem?
+Speaker A 56530 - 61190: Okay, sir. Does the problem have a strategical impact on the business?
+Speaker B 61890 - 69230: It does. The program doesn't work. I'm getting an error object reference not set to an instance of an object.
+Speaker A 69650 - 71870: Is that something on the screen, sir?
+Speaker B 72690 - 74234: Where else could it be?
+Speaker A 74402 - 82282: Thank you, sir. Our department is not responsible for screen issues. I will now put you through to another team who will help you on that, sir. Okay.
+Speaker B 82426 - 84870: It is not a screen issue.
+Speaker A 85650 - 90458: Thank you for calling our support team. I will now archive this case. But should you have a.
+Speaker B 90514 - 91098: Wait a second.
+Speaker C 91154 - 91562: What?
+Speaker B 91666 - 95430: You said you will put me through to someone else, not archive this case.
+Speaker A 95970 - 98230: Okay, sir. I will do this now.
+Speaker C 98530 - 103018: Hello, my name is Pawel. What can I do for you?
+Speaker B 103154 - 108430: Hi, I'm getting an error object reference not set to an instance of an object.
+Speaker C 110420 - 113880: Yes, the weather is nice. And you?
+Speaker B 116500 - 118720: Yeah. Do you speak English?
+Speaker C 119780 - 123560: Yes, I speak. Okay. What is problem?
+Speaker B 124900 - 128720: Object reference not set to an instance of an object.
+Speaker C 131700 - 133880: Sorry, can you repeat please?
+Speaker B 134500 - 140796: Is there someone around who actually speaks English and knows the product you sell?
+Speaker C 140948 - 149180: I am sorry. I have some phone issue. I will now forward this call to someone who has better phone.
+Speaker D 149260 - 152668: Buongiorno. My name is Luigi Benedetti.
+Speaker B 152844 - 153560: Really?
+Speaker D 154260 - 159260: Really. Really. But people in Italy call me Roberto. Why are you calling me when siesta?
+Speaker B 159420 - 161920: If it's siesta, why did you answer the phone?
+Speaker C 163450 - 164310: Hmm.
+Speaker D 165370 - 168818: Me? I work at a restaurant.
+Speaker C 168914 - 171282: It's a reaction, you know. You call, I pick up.
+Speaker D 171386 - 175430: Let me transfer you to someone who has no siesta.
+Speaker C 176250 - 188670: Let me be honest with you. They will not help you. We do not support this software. We have plenty of solutions in our portfolio. But we do not support this one. It is company policy for our department.
+Speaker B 189390 - 196854: So please put me through to someone who knows the answer and is allowed to give it to me.
+Speaker C 197022 - 197606: Nah.
+Speaker A 197718 - 198570: Please wait.
+Speaker C 199230 - 206310: Never in my life have I heard of such a complex issue. But as far as I know.
+Speaker B 206430 - 208570: Is this a fake British accent?
+Speaker A 208990 - 209686: Yeah.
+Speaker B 209798 - 231620: I'm sorry. I totally understand your problem. And I know how to fix it. Finally. So what is the solution? Since you've been waiting a long time to get connected with the right person. Instead of giving you a link to our Knowledge base article, let me put you through to an engineer who will give you step by step instructions on the phone. And make sure it works on your end. Okay? Okay. That works.
+Speaker A 233000 - 243630: Hello, this is Rajesh. Hello sir. Are you okay? I feel you're in pain, sir. How big is your pain? From one to five billion.
