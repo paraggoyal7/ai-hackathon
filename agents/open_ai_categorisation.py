@@ -1,8 +1,9 @@
 import openai
 import time
 import json
+import re
 # Set your OpenAI API key
-openai.api_key = "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"  # Replace with your actual API key
+openai.api_key = "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"
 
 # Get Agent ID from user input
 agent_id = "asst_zNGtDRxxFv8tm8D3FXT4KUgX"
@@ -24,12 +25,14 @@ def check_run_status(thread_id, run_id):
         if status == "completed":
             response = openai.beta.threads.messages.list(thread_id=thread_id)
             last_message = response.data[0]
-            split = last_message.content[0].text.value.strip().split("\n")
-            print(split)
-            raw_text = split[1:len(split)-1]
-            print("\n".join(raw_text))
-            parsed_json = json.loads("\n".join(raw_text))
-            return  parsed_json # Exit when completed
+            raw_text = last_message.content[0].text.value.strip()
+            match = re.search(r"```json\s*([\s\S]*?)\s*```", raw_text, re.DOTALL)
+            if match:
+                json_content = match.group(1)  # Extract JSON string
+                print("json_content ", json_content)
+                parsed_json = json.loads(json_content)
+                return parsed_json
+            return []  # Exit when completed
         elif status in ["failed", "cancelled"]:
             print(f"Run failed or cancelled: {response}")
             return response

@@ -3,7 +3,7 @@ import time
 import json
 import re
 # Set your OpenAI API key
-openai.api_key = "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"  # Replace with your actual API key
+openai.api_key = "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"
 
 # Get Agent ID from user input
 agent_id = "asst_sbi14016YUg7pNtTnU0toxv9"
@@ -28,13 +28,13 @@ def check_run_status(thread_id, run_id):
             raw_text = last_message.content[0].text.value.strip()
             print(raw_text)
             try:
-                json_match = re.search(r"\{[\s\S]*\}", raw_text)  # Finds content between `{}`
-                json_content = json_match.group(0)  # Extract JSON string
+                json_match = re.search(r"```json\s*([\s\S]*?)\s*```", raw_text)  # Finds content between `{}`
+                json_content = json_match.group(1).strip()
                 parsed_json = json.loads(json_content)  # Convert string to JSON
                 print(json.dumps(parsed_json, indent=2))  # Print as properly formatted JSON
                 return parsed_json  # Exit when completed
-            except:
-                print("Invalid transcript")
+            except Exception as e:
+                print("Invalid transcript :",e)
                 return {'Category': 'Other', 'Points missed': []}
 
         elif status in ["failed", "cancelled"]:
@@ -64,9 +64,10 @@ def interact_with_agent(user_message):
 
 
 # Example Usage
-# file_path = "../transcript.txt"
-# user_message = read_text_from_file(file_path)
-# response = interact_with_agent(user_message)
-#
-# # Print the response from the agent
+if __name__ == '__main__':
+    file_path = "../transcript.txt"
+    user_message = read_text_from_file(file_path)
+    response = interact_with_agent(user_message)
+
+# Print the response from the agent
 # print(response)
