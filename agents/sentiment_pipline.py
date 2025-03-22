@@ -1,5 +1,5 @@
-from tone_analysis import interact_with_agent as tone_agent
-from open_ai_sentiment import interact_with_agent as sentiment_agent
+from agents.tone_analysis import interact_with_agent as tone_agent
+from agents.open_ai_sentiment import interact_with_agent as sentiment_agent
 
 file_path = "../transcript.txt"
 # mp3_file = "/Users/parag/Downloads/every_tech_support_call_ever.mp3"

@@ -1,5 +1,6 @@
 import requests
 import time
+import os
 
 base_url = "https://api.assemblyai.com"
 
@@ -7,47 +8,51 @@ headers = {
     "authorization": "6c06bfb5e24c4151b73a286b71175f53"
 }
 
-with open("/Users/parag/Downloads/Subway 3.mp3", "rb") as f:
-  response = requests.post(base_url + "/v2/upload",
-                          headers=headers,
-                          data=f)
 
-upload_url = response.json()["upload_url"]
+def generate_transcript(file_path):
+    with open(file_path, "rb") as f:
+      response = requests.post(base_url + "/v2/upload",
+                              headers=headers,
+                              data=f)
 
-data = {
-    "audio_url": upload_url, # You can also use a URL to an audio or video file on the web
-    "speaker_labels": True
-}
+    upload_url = response.json()["upload_url"]
 
-url = base_url + "/v2/transcript"
-response = requests.post(url, json=data, headers=headers)
+    data = {
+        "audio_url": upload_url, # You can also use a URL to an audio or video file on the web
+        "speaker_labels": True
+    }
 
-transcript_id = response.json()['id']
-polling_endpoint = f"https://api.assemblyai.com/v2/transcript/{transcript_id}"
+    url = base_url + "/v2/transcript"
+    response = requests.post(url, json=data, headers=headers)
 
-while True:
-  transcription_result = requests.get(polling_endpoint, headers=headers).json()
+    transcript_id = response.json()['id']
+    polling_endpoint = f"https://api.assemblyai.com/v2/transcript/{transcript_id}"
 
-  if transcription_result['status'] == 'completed':
-    print(f"Transcript ID:", transcript_id)
-    break
+    while True:
+      transcription_result = requests.get(polling_endpoint, headers=headers).json()
 
-  elif transcription_result['status'] == 'error':
-    raise RuntimeError(f"Transcription failed: {transcription_result['error']}")
+      if transcription_result['status'] == 'completed':
+        print(f"Transcript ID:", transcript_id)
+        break
 
-  else:
-    time.sleep(3)
+      elif transcription_result['status'] == 'error':
+        raise RuntimeError(f"Transcription failed: {transcription_result['error']}")
 
-result = []
-for utterance in transcription_result['utterances']:
-  s = f"Speaker {utterance['speaker']} {utterance['start']} - {utterance['end']}: {utterance['text']}"
-  result.append(s)
+      else:
+        time.sleep(3)
 
-result = "\n".join(result)
+    result = []
+    for utterance in transcription_result['utterances']:
+      s = f"Speaker {utterance['speaker']} {utterance['start']} - {utterance['end']}: {utterance['text']}"
+      result.append(s)
 
-print(result)
+    result = "\n".join(result)
 
-with open("transcript.txt", "w", encoding="utf-8") as f:
-    f.write(result)
+    print(result)
+    file_path = ""
 
-print("Transcript saved to transcript.txt")
+    with open("transcript.txt", "w", encoding="utf-8") as f:
+        f.write(result)
+
+    print("Transcript saved to transcript.txt")
+    return os.path.abspath("transcript.txt"), result

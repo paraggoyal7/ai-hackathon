@@ -1,5 +1,5 @@
-from open_ai_categorisation import interact_with_agent as categorisation_agent
-from open_ai_sop import interact_with_agent as sop_agent
+from agents.open_ai_categorisation import interact_with_agent as categorisation_agent
+from agents.open_ai_sop import interact_with_agent as sop_agent
 
 file_path = "../transcript.txt"
 

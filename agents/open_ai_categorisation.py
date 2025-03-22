@@ -3,7 +3,7 @@ import time
 import json
 import re
 # Set your OpenAI API key
-openai.api_key = "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"
+openai.api_key = "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"
 
 # Get Agent ID from user input
 agent_id = "asst_zNGtDRxxFv8tm8D3FXT4KUgX"
